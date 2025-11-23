@@ -15,9 +15,29 @@ import EasterEgg from "./components/EasterEgg";
 import CodeAnimation from "./components/CodeAnimation";
 import { useTimeBasedTheme } from "./hooks/useTimeBasedTheme";
 import UserGeneralDetails from "./components/Hero";
+import { useEffect, useState } from "react";
+import { getOpenAiResponse } from "./Services/openai";
 
 function App() {
   useTimeBasedTheme();
+
+  const [chat, setChat] = useState<any>(null);
+  const [isloading, setIsLoading] = useState<boolean>(false);
+
+  const getChatData = async () => {
+    setIsLoading(true);
+    try {
+      const response = await getOpenAiResponse("Hello, how are you?");
+      console.log(response);
+    } catch (error) {
+      console.error("Error fetching chat data:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  useEffect(() => {
+    // getChatData();
+  }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors">

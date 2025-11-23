@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
-import { portfolioAPI } from '../lib/supabase';
+import { useState } from "react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
+// import { portfolioAPI } from '../lib/supabase';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -18,15 +18,15 @@ export default function Contact() {
     setError(null);
 
     try {
-      await portfolioAPI.submitContactMessage(formData);
+      // await portfolioAPI.submitContactMessage(formData);
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: "", email: "", message: "" });
       }, 3000);
     } catch (err) {
-      setError('Failed to send message. Please try again.');
-      console.error('Error submitting contact form:', err);
+      setError("Failed to send message. Please try again.");
+      console.error("Error submitting contact form:", err);
     } finally {
       setSending(false);
     }
@@ -50,8 +50,8 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-4"></div>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear
-            from you!
+            Have a project in mind or want to collaborate? I'd love to hear from
+            you!
           </p>
         </div>
 
@@ -67,11 +67,18 @@ export default function Contact() {
                   className="flex items-center gap-4 p-4 bg-white dark:bg-slate-700 rounded-xl shadow-md hover:shadow-lg transition-all group"
                 >
                   <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                    <Mail className="text-blue-600 dark:text-blue-400" size={24} />
+                    <Mail
+                      className="text-blue-600 dark:text-blue-400"
+                      size={24}
+                    />
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900 dark:text-white">Email</div>
-                    <div className="text-slate-600 dark:text-slate-300">hemanth@example.com</div>
+                    <div className="font-semibold text-slate-900 dark:text-white">
+                      Email
+                    </div>
+                    <div className="text-slate-600 dark:text-slate-300">
+                      hemanth@example.com
+                    </div>
                   </div>
                 </a>
 
@@ -80,21 +87,35 @@ export default function Contact() {
                   className="flex items-center gap-4 p-4 bg-white dark:bg-slate-700 rounded-xl shadow-md hover:shadow-lg transition-all group"
                 >
                   <div className="p-3 bg-green-100 dark:bg-green-900 rounded-lg group-hover:bg-green-200 dark:group-hover:bg-green-800 transition-colors">
-                    <Phone className="text-green-600 dark:text-green-400" size={24} />
+                    <Phone
+                      className="text-green-600 dark:text-green-400"
+                      size={24}
+                    />
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900 dark:text-white">Phone</div>
-                    <div className="text-slate-600 dark:text-slate-300">+1 (234) 567-890</div>
+                    <div className="font-semibold text-slate-900 dark:text-white">
+                      Phone
+                    </div>
+                    <div className="text-slate-600 dark:text-slate-300">
+                      +1 (234) 567-890
+                    </div>
                   </div>
                 </a>
 
                 <div className="flex items-center gap-4 p-4 bg-white dark:bg-slate-700 rounded-xl shadow-md">
                   <div className="p-3 bg-orange-100 dark:bg-orange-900 rounded-lg">
-                    <MapPin className="text-orange-600 dark:text-orange-400" size={24} />
+                    <MapPin
+                      className="text-orange-600 dark:text-orange-400"
+                      size={24}
+                    />
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900 dark:text-white">Location</div>
-                    <div className="text-slate-600 dark:text-slate-300">Hyderabad, India</div>
+                    <div className="font-semibold text-slate-900 dark:text-white">
+                      Location
+                    </div>
+                    <div className="text-slate-600 dark:text-slate-300">
+                      Hyderabad, India
+                    </div>
                   </div>
                 </div>
               </div>
@@ -111,7 +132,10 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="p-4 bg-white dark:bg-slate-700 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-110"
                 >
-                  <Github size={28} className="text-slate-700 dark:text-slate-300" />
+                  <Github
+                    size={28}
+                    className="text-slate-700 dark:text-slate-300"
+                  />
                 </a>
                 <a
                   href="https://linkedin.com/in/hemanthgoud"
@@ -119,7 +143,10 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="p-4 bg-white dark:bg-slate-700 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-110"
                 >
-                  <Linkedin size={28} className="text-blue-600 dark:text-blue-400" />
+                  <Linkedin
+                    size={28}
+                    className="text-blue-600 dark:text-blue-400"
+                  />
                 </a>
               </div>
             </div>
@@ -209,7 +236,7 @@ export default function Contact() {
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-xl transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={20} />
-                  {sending ? 'Sending...' : 'Send Message'}
+                  {sending ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}
