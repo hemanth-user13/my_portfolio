@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Quote, Linkedin } from 'lucide-react';
-import { portfolioAPI, Testimonial } from '../lib/supabase';
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Quote, Linkedin } from "lucide-react";
+// import { portfolioAPI, Testimonial } from '../lib/supabase';
 
 export default function Testimonials() {
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [testimonials, setTestimonials] = useState<any[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -13,10 +13,10 @@ export default function Testimonials() {
 
   const loadTestimonials = async () => {
     try {
-      const data = await portfolioAPI.getTestimonials();
-      setTestimonials(data);
+      // const data = await portfolioAPIs.getTestimonials();
+      // setTestimonials(data);
     } catch (error) {
-      console.error('Error loading testimonials:', error);
+      console.error("Error loading testimonials:", error);
     } finally {
       setLoading(false);
     }
@@ -27,7 +27,9 @@ export default function Testimonials() {
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   useEffect(() => {
@@ -63,7 +65,10 @@ export default function Testimonials() {
 
         <div className="relative">
           <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl p-8 md:p-12">
-            <Quote className="text-blue-600 dark:text-blue-400 mb-6" size={48} />
+            <Quote
+              className="text-blue-600 dark:text-blue-400 mb-6"
+              size={48}
+            />
 
             <blockquote className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8 leading-relaxed">
               "{currentTestimonial.content}"
@@ -88,7 +93,10 @@ export default function Testimonials() {
                   rel="noopener noreferrer"
                   className="p-2 bg-blue-50 dark:bg-slate-700 rounded-lg hover:bg-blue-100 dark:hover:bg-slate-600 transition-colors"
                 >
-                  <Linkedin className="text-blue-600 dark:text-blue-400" size={24} />
+                  <Linkedin
+                    className="text-blue-600 dark:text-blue-400"
+                    size={24}
+                  />
                 </a>
               )}
             </div>
@@ -100,7 +108,10 @@ export default function Testimonials() {
               className="p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="text-slate-700 dark:text-slate-300" size={24} />
+              <ChevronLeft
+                className="text-slate-700 dark:text-slate-300"
+                size={24}
+              />
             </button>
 
             <div className="flex gap-2">
@@ -110,8 +121,8 @@ export default function Testimonials() {
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     index === currentIndex
-                      ? 'bg-blue-600 w-8'
-                      : 'bg-slate-300 dark:bg-slate-600'
+                      ? "bg-blue-600 w-8"
+                      : "bg-slate-300 dark:bg-slate-600"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -123,7 +134,10 @@ export default function Testimonials() {
               className="p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="text-slate-700 dark:text-slate-300" size={24} />
+              <ChevronRight
+                className="text-slate-700 dark:text-slate-300"
+                size={24}
+              />
             </button>
           </div>
         </div>

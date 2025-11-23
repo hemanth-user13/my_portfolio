@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
-import { portfolioAPI } from '../lib/supabase';
+import { useState } from "react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
+// import { portfolioAPI } from '../lib/supabase';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -18,15 +18,15 @@ export default function Contact() {
     setError(null);
 
     try {
-      await portfolioAPI.submitContactMessage(formData);
+      // await portfolioAPI.submitContactMessage(formData);
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: "", email: "", message: "" });
       }, 3000);
     } catch (err) {
-      setError('Failed to send message. Please try again.');
-      console.error('Error submitting contact form:', err);
+      setError("Failed to send message. Please try again.");
+      console.error("Error submitting contact form:", err);
     } finally {
       setSending(false);
     }
@@ -50,8 +50,8 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-4"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear
-            from you!
+            Have a project in mind or want to collaborate? I'd love to hear from
+            you!
           </p>
         </div>
 

@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { portfolioAPI, BlogPost } from '../lib/supabase';
-import { formatDate } from '../lib/utils';
+import { useState, useEffect } from "react";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
+// import { portfolioAPI, BlogPost } from '../lib/supabase';
+import { formatDate } from "../lib/utils";
 
 export default function Blog() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    loadPosts();
-  }, []);
+  // useEffect(() => {
+  //   loadPosts();
+  // }, []);
 
-  const loadPosts = async () => {
-    try {
-      const data = await portfolioAPI.getBlogPosts();
-      setPosts(data);
-    } catch (error) {
-      console.error('Error loading blog posts:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const loadPosts = async () => {
+  //   try {
+  //     const data = await portfolioAPI.getBlogPosts();
+  //     setPosts(data);
+  //   } catch (error) {
+  //     console.error('Error loading blog posts:', error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   if (loading) {
     return (
@@ -45,7 +45,8 @@ export default function Blog() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-4"></div>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Sharing knowledge, experiences, and insights from my development journey
+            Sharing knowledge, experiences, and insights from my development
+            journey
           </p>
         </div>
 
@@ -64,7 +65,9 @@ export default function Blog() {
                 <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400 mb-3">
                   <div className="flex items-center gap-1">
                     <Calendar size={16} />
-                    <span>{formatDate(post.published_at || post.created_at)}</span>
+                    <span>
+                      {formatDate(post.published_at || post.created_at)}
+                    </span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Clock size={16} />
