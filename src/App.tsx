@@ -24,20 +24,22 @@ function App() {
   const [chat, setChat] = useState<any>(null);
   const [isloading, setIsLoading] = useState<boolean>(false);
 
-  const getChatData = async () => {
-    setIsLoading(true);
-    try {
-      const response = await getOpenAiResponse("Hello, how are you?");
-      console.log(response);
-    } catch (error) {
-      console.error("Error fetching chat data:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  useEffect(() => {
-    // getChatData();
-  }, []);
+  // const getChatData = async () => {
+  //   setIsLoading(true);
+  //   try {
+  //     const response = await getOpenAiResponse(
+  //       "Hi, can you please explain about hemanth?"
+  //     );
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.error("Error fetching chat data:", error);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+  // useEffect(() => {
+  //   getChatData();
+  // }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors">

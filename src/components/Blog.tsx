@@ -5,7 +5,7 @@ import { formatDate } from "../lib/utils";
 
 export default function Blog() {
   const [posts, setPosts] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // useEffect(() => {
   //   loadPosts();
