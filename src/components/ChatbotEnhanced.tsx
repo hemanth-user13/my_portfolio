@@ -172,7 +172,7 @@ export default function ChatbotEnhanced() {
     setTimeout(() => {
       const botResponse: Message = {
         type: "bot",
-        text: response.data.answer,
+        text: getSmartResponse(input),
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botResponse]);
