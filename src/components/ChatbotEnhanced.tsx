@@ -196,11 +196,6 @@ export default function ChatbotEnhanced() {
           className="fixed bottom-6 right-6 z-50 p-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-110 group"
         >
           <MessageCircle size={28} />
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
-          <Sparkles
-            size={16}
-            className="absolute -top-2 -left-2 text-yellow-300 animate-bounce"
-          />
         </button>
       )}
 
