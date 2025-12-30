@@ -1,63 +1,86 @@
-import { useState } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { useState } from "react";
+import { MessageCircle, X, Send } from "lucide-react";
 
 interface Message {
-  type: 'user' | 'bot';
+  type: "user" | "bot";
   text: string;
 }
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { type: 'bot', text: 'Hi! I\'m Hemanth\'s assistant. How can I help you today?' },
+    {
+      type: "bot",
+      text: "Hi! I'm Hemanth's assistant. How can I help you today?",
+    },
   ]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const faqs: Record<string, string> = {
-    'technologies': 'Hemanth specializes in React, Django, REST APIs, JavaScript, Python, HTML, CSS, Tailwind CSS, and Bootstrap. He also works with PostgreSQL and MySQL databases.',
-    'projects': 'Check out the Projects section above to see Hemanth\'s best work, including e-commerce platforms, task management apps, and social media dashboards.',
-    'contact': 'You can reach Hemanth via email at hemanth@example.com or connect on LinkedIn. Use the contact form above to send a message!',
-    'experience': 'Hemanth is a Full Stack Developer with extensive experience in building scalable web applications using modern technologies.',
-    'hire': 'Hemanth is available for freelance projects and full-time opportunities. Please use the contact form or email directly to discuss your requirements.',
+    technologies:
+      "Hemanth specializes in React, Django, REST APIs, JavaScript, Python, HTML, CSS, Tailwind CSS, and Bootstrap. He also works with PostgreSQL and MySQL databases.",
+    projects:
+      "Check out the Projects section above to see Hemanth's best work, including e-commerce platforms, task management apps, and social media dashboards.",
+    contact:
+      "You can reach Hemanth via email at hemanth@example.com or connect on LinkedIn. Use the contact form above to send a message!",
+    experience:
+      "Hemanth is a Full Stack Developer with extensive experience in building scalable web applications using modern technologies.",
+    hire: "Hemanth is available for freelance projects and full-time opportunities. Please use the contact form or email directly to discuss your requirements.",
   };
 
   const getBotResponse = (userMessage: string): string => {
+    console.log("userMessage", userMessage);
     const lowerMessage = userMessage.toLowerCase();
 
-    if (lowerMessage.includes('tech') || lowerMessage.includes('skill') || lowerMessage.includes('stack')) {
+    if (
+      lowerMessage.includes("tech") ||
+      lowerMessage.includes("skill") ||
+      lowerMessage.includes("stack")
+    ) {
       return faqs.technologies;
     }
-    if (lowerMessage.includes('project') || lowerMessage.includes('work') || lowerMessage.includes('portfolio')) {
+    if (
+      lowerMessage.includes("project") ||
+      lowerMessage.includes("work") ||
+      lowerMessage.includes("portfolio")
+    ) {
       return faqs.projects;
     }
-    if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
+    if (
+      lowerMessage.includes("contact") ||
+      lowerMessage.includes("email") ||
+      lowerMessage.includes("reach")
+    ) {
       return faqs.contact;
     }
-    if (lowerMessage.includes('experience') || lowerMessage.includes('about')) {
+    if (lowerMessage.includes("experience") || lowerMessage.includes("about")) {
       return faqs.experience;
     }
-    if (lowerMessage.includes('hire') || lowerMessage.includes('available') || lowerMessage.includes('opportunity')) {
+    if (
+      lowerMessage.includes("hire") ||
+      lowerMessage.includes("available") ||
+      lowerMessage.includes("opportunity")
+    ) {
       return faqs.hire;
     }
 
-    return 'I can help you with:\n• Technologies Hemanth uses\n• His best projects\n• How to contact him\n• His experience\n• Hiring availability\n\nWhat would you like to know?';
+    return "I can help you with:\n• Technologies Hemanth uses\n• His best projects\n• How to contact him\n• His experience\n• Hiring availability\n\nWhat would you like to know?";
   };
 
   const handleSend = () => {
     if (!input.trim()) return;
-
-    const userMessage: Message = { type: 'user', text: input };
-    setMessages(prev => [...prev, userMessage]);
+    const userMessage: Message = { type: "user", text: input };
+    setMessages((prev) => [...prev, userMessage]);
 
     setTimeout(() => {
       const botResponse: Message = {
-        type: 'bot',
+        type: "bot",
         text: getBotResponse(input),
       };
-      setMessages(prev => [...prev, botResponse]);
+      setMessages((prev) => [...prev, botResponse]);
     }, 500);
 
-    setInput('');
+    setInput("");
   };
 
   return (
@@ -80,7 +103,9 @@ export default function Chatbot() {
               </div>
               <div>
                 <h3 className="text-white font-semibold">Ask Me Anything</h3>
-                <p className="text-blue-100 text-xs">Typically replies instantly</p>
+                <p className="text-blue-100 text-xs">
+                  Typically replies instantly
+                </p>
               </div>
             </div>
             <button
@@ -95,13 +120,15 @@ export default function Chatbot() {
             {messages.map((msg, idx) => (
               <div
                 key={idx}
-                className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex ${
+                  msg.type === "user" ? "justify-end" : "justify-start"
+                }`}
               >
                 <div
                   className={`max-w-[80%] p-3 rounded-lg ${
-                    msg.type === 'user'
-                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
-                      : 'bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100'
+                    msg.type === "user"
+                      ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white"
+                      : "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100"
                   }`}
                 >
                   <p className="text-sm whitespace-pre-line">{msg.text}</p>
@@ -116,7 +143,7 @@ export default function Chatbot() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                onKeyPress={(e) => e.key === "Enter" && handleSend()}
                 placeholder="Type your question..."
                 className="flex-1 px-4 py-2 rounded-lg border dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               />

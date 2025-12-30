@@ -1,6 +1,5 @@
 import Preloader from "./components/Preloader";
 import NavbarEnhanced from "./components/NavbarEnhanced";
-import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -15,8 +14,7 @@ import EasterEgg from "./components/EasterEgg";
 import CodeAnimation from "./components/CodeAnimation";
 import { useTimeBasedTheme } from "./hooks/useTimeBasedTheme";
 import UserGeneralDetails from "./components/Hero";
-import { useEffect, useState } from "react";
-import { getOpenAiResponse } from "./Services/openai";
+import { useState } from "react";
 
 function App() {
   useTimeBasedTheme();

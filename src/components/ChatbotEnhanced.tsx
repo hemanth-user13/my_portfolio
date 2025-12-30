@@ -167,7 +167,7 @@ export default function ChatbotEnhanced() {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsTyping(true);
-    const response = await getOpenAiResponse(input);
+    // const response = await getSmartResponse(input);
 
     setTimeout(() => {
       const botResponse: Message = {
@@ -175,6 +175,7 @@ export default function ChatbotEnhanced() {
         text: getSmartResponse(input),
         timestamp: new Date(),
       };
+
       setMessages((prev) => [...prev, botResponse]);
       setIsTyping(false);
     }, 1000);
