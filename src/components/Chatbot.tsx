@@ -22,7 +22,7 @@ export default function Chatbot() {
     projects:
       "Check out the Projects section above to see Hemanth's best work, including e-commerce platforms, task management apps, and social media dashboards.",
     contact:
-      "You can reach Hemanth via email at hemanth@example.com or connect on LinkedIn. Use the contact form above to send a message!",
+      "You can reach Hemanth via email at bhemanthgoud7878@gmail.com or connect on LinkedIn. Use the contact form above to send a message!",
     experience:
       "Hemanth is a Full Stack Developer with extensive experience in building scalable web applications using modern technologies.",
     hire: "Hemanth is available for freelance projects and full-time opportunities. Please use the contact form or email directly to discuss your requirements.",

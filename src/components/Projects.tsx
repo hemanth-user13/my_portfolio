@@ -83,7 +83,7 @@ export default function Projects() {
               key={project.title}
               className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100"
             >
-              <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 p-12 flex items-center justify-center overflow-hidden">
+              <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-600 dark:to-black p-12 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity"></div>
                 <div className="text-7xl relative z-10 transform group-hover:scale-110 transition-transform">
                   {project.image}

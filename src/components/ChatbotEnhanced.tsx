@@ -57,7 +57,7 @@ export default function ChatbotEnhanced() {
     experience:
       "Hemanth is an expert Full Stack Developer with deep knowledge in React and Django. He specializes in building scalable web applications with clean architecture.",
     contact:
-      "You can reach Hemanth at hemanth@example.com or connect on LinkedIn and GitHub. Use the contact form on this page to send a message!",
+      "You can reach Hemanth at bhemanthgoud7878@gmail.com or connect on LinkedIn and GitHub. Use the contact form on this page to send a message!",
     education:
       "Hemanth has multiple certifications in React, Django, Python, and full-stack development from platforms like Udemy and Coursera.",
   };
