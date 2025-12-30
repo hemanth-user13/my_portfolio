@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ArrowUp, Github, Linkedin, Code2, Mail } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { ArrowUp, Github, Linkedin, Code2, Mail } from "lucide-react";
 
 export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -8,28 +8,28 @@ export default function Footer() {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const quickLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Profiles', href: '#profiles' },
-    { label: 'Contact', href: '#contact' },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#projects" },
+    { label: "Profiles", href: "#profiles" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://github.com/hemanthgoud"
+                href="https://github.com/hemanth-user13"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
@@ -56,7 +56,7 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/hemanthgoud"
+                href="https://www.linkedin.com/in/bolgum-hemanth-goud-722611247/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
@@ -64,7 +64,7 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://leetcode.com/hemanthgoud"
+                href="http://leetcode.com/u/hemanth-123/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
@@ -72,7 +72,7 @@ export default function Footer() {
                 <Code2 size={20} />
               </a>
               <a
-                href="mailto:hemanth@example.com"
+                href="bhemanthgoud7878@gmail.com"
                 className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
               >
                 <Mail size={20} />
@@ -103,7 +103,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Get In Touch</h3>
             <div className="space-y-2 text-slate-400">
               <p>Hyderabad, India</p>
-              <p>hemanth@example.com</p>
+              <p>bhemanthgoud7878@gmail.com</p>
               <p>+1 (234) 567-890</p>
             </div>
           </div>

@@ -74,7 +74,9 @@ export default function About() {
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-slate-600 text-sm">{item.description}</p>
+                    <p className="text-slate-600 text-sm dark:text-gray-400">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               ))}
