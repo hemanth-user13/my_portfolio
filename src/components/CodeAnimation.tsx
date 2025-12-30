@@ -30,7 +30,7 @@ return (
   }, [index, words]);
 
   return (
-    <div className="bg-slate-900 dark:bg-black rounded-2xl p-6 font-mono text-sm shadow-2xl border border-slate-700 w-full max-w-2xl">
+    <div className="bg-slate-900 dark:bg-black rounded-2xl p-6 font-mono text-sm shadow-2xl border border-slate-700 w-full ">
       <div className="flex items-center gap-2 mb-4">
         <div className="w-3 h-3 rounded-full bg-red-500" />
         <div className="w-3 h-3 rounded-full bg-yellow-500" />
