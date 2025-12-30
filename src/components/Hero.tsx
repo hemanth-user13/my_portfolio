@@ -70,7 +70,7 @@ export default function UserGeneralDetails() {
             </div>
             <div className="flex gap-4 pt-4">
               <a
-                href="https://github.com/hemanthgoud"
+                href="https://github.com/hemanth-user13"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white dark:bg-slate-700 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-110"
@@ -81,7 +81,7 @@ export default function UserGeneralDetails() {
                 />
               </a>
               <a
-                href="https://linkedin.com/in/hemanthgoud"
+                href="https://www.linkedin.com/in/bolgum-hemanth-goud-722611247/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white dark:bg-slate-700 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-110"
