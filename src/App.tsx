@@ -63,7 +63,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
-      <Profiles />
+      {/* <Profiles /> */}
       <Certifications />
       <Blog />
       <Testimonials />

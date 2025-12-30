@@ -127,7 +127,7 @@ export default function Contact() {
               </h3>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/hemanthgoud"
+                  href="https://github.com/hemanth-user13"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 bg-white dark:bg-slate-700 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-110"
@@ -138,7 +138,7 @@ export default function Contact() {
                   />
                 </a>
                 <a
-                  href="https://linkedin.com/in/hemanthgoud"
+                  href="https://www.linkedin.com/in/bolgum-hemanth-goud-722611247/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 bg-white dark:bg-slate-700 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-110"
@@ -188,7 +188,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="John Doe"
+                    placeholder="Enter your name"
                   />
                 </div>
 
@@ -207,7 +207,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="john@example.com"
+                    placeholder="Enter your email"
                   />
                 </div>
 
@@ -226,7 +226,7 @@ export default function Contact() {
                     required
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                    placeholder="Tell me about your project..."
+                    placeholder="Ping me if any query..."
                   ></textarea>
                 </div>
 
