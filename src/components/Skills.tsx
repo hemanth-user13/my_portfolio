@@ -42,7 +42,7 @@ export default function Skills() {
       color: "from-blue-500 to-cyan-500",
       skills: [
         { name: "React", level: 90 },
-        { name: "Redux", level: 85 },
+        // { name: "Redux", level: 85 },
         { name: "JavaScript", level: 90 },
         { name: "HTML & CSS", level: 95 },
         { name: "Tailwind CSS", level: 90 },

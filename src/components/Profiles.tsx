@@ -73,7 +73,7 @@ export default function Profiles() {
               >
                 <profile.icon className="text-white" size={32} />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">
+              <h3 className="text-xl font-bold text-slate-900  dark:text-gray-300 mb-2">
                 {profile.name}
               </h3>
               <p className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-2">
@@ -88,7 +88,7 @@ export default function Profiles() {
 
         <div className="mt-12 bg-white dark:bg-slate-700 rounded-2xl p-8 shadow-lg">
           <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-slate-900 mb-2">
+            <h3 className="text-2xl font-bold text-slate-900 mb-2 dark:text-gray-300">
               GitHub Contribution Activity
             </h3>
             <p className="text-slate-600 dark:text-white">
