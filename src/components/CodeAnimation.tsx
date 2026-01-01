@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function CodeAnimation() {
   const fullCode = `
 const skills = ["React", "Django", "Python", "JavaScript"];
-const passion = "Building Amazing Web Apps";
+const passion = "Building Amazing Websites";
 
 return (
   <Developer
