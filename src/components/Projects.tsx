@@ -18,7 +18,7 @@ export default function Projects() {
       subtitle: "Compliance Platform — Admin Panel",
       description:
         "Admin panel for a multi-tenant compliance management platform covering partner onboarding, customer account management, and user role configuration. Localized into 4 languages so partner firms can operate in their preferred language.",
-      technologies: ["React", "Django REST Framework", "RBAC", "MySQL", "i18n"],
+      technologies: ["React", "Redux", "RBAC", "Tailwind", "i18n"],
       image: "🛠️",
       internal: true,
     },
@@ -27,7 +27,12 @@ export default function Projects() {
       subtitle: "Compliance Platform — Customer Portal",
       description:
         "Customer-facing portal for managing regulatory tasks, questionnaires, and compliance workflows with role-based permissions. Optimized performance on screens listing large volumes of regulations/tasks and added document preview and reporting.",
-      technologies: ["React", "Django REST Framework", "REST API", "Performance Tuning"],
+      technologies: [
+        "React",
+        "Django REST Framework",
+        "REST API",
+        "Performance Tuning",
+      ],
       image: "📋",
       internal: true,
     },
@@ -36,7 +41,13 @@ export default function Projects() {
       subtitle: "Internal Employee Management System — Full Stack",
       description:
         "End-to-end internal tool: designed the authentication module (login, token/session handling, role-based permissions) and REST APIs for the employee directory, project tracking, file management, and leave workflow. Built the React front end including private/group messaging, account settings, and a multi-step onboarding wizard.",
-      technologies: ["React", "Python", "Django REST Framework", "JWT Auth", "MySQL"],
+      technologies: [
+        "React",
+        "Python",
+        "Django REST Framework",
+        "JWT Auth",
+        "MySQL",
+      ],
       image: "🏢",
       internal: true,
     },
@@ -61,8 +72,8 @@ export default function Projects() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-4"></div>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Real work from my time at Omnics Technologies, plus an
-            open-source package built along the way
+            Real work from my time at Omnics Technologies, plus an open-source
+            package built along the way
           </p>
         </div>
 
