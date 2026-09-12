@@ -72,3 +72,66 @@ html {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
+
+/* ---------- Custom scrollbar ---------- */
+/* Minimal, low-contrast, brand-tinted — designed to sit quietly on top of
+   every section background (white / slate-50 / slate-800 / slate-900)
+   instead of drawing a hard-edged track box on top of them. */
+:root {
+  --scrollbar-thumb: rgba(37, 99, 235, 0.28);
+  --scrollbar-thumb-hover: rgba(37, 99, 235, 0.5);
+}
+
+html.dark {
+  --scrollbar-thumb: rgba(56, 189, 248, 0.3);
+  --scrollbar-thumb-hover: rgba(56, 189, 248, 0.55);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ---------- Cursor ---------- */
+/* Keep the plain system arrow everywhere, including over links, buttons
+   and other clickable elements — no hand/pointer icon, no custom shape. */
+html,
+body {
+  cursor: default;
+}
+
+a,
+button,
+[role='button'],
+label,
+select,
+summary {
+  cursor: default;
+}

@@ -1,6 +1,7 @@
 import Preloader from "./components/Preloader";
 import NavbarEnhanced from "./components/NavbarEnhanced";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
@@ -58,6 +59,7 @@ function App() {
       </section>
 
       <About />
+      <Experience />
       <Skills />
       <Projects />
       {/* <Profiles /> */}
