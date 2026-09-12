@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Download, Mail, Github, Linkedin } from "lucide-react";
+import MyPic from "../media/hemanth_pic.png";
 
 export default function UserGeneralDetails() {
   const roles = [
-    "React Developer 💻",
-    "Django Developer 🐍",
-    "Full Stack Engineer 🚀",
+    "Full Stack Developer 🚀",
+    "React.js Developer 💻",
+    "Django REST Framework Developer 🐍",
   ];
   const [currentRole, setCurrentRole] = useState(0);
 
@@ -47,14 +48,16 @@ export default function UserGeneralDetails() {
               </h2>
             </div>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg">
-              I craft scalable web applications that merge creativity and
-              performance. Passionate about building user-focused designs and
-              solving complex problems.
+              Full Stack Developer with 2.4+ years of experience building
+              scalable web applications end-to-end — from React.js front ends
+              to Python/Django REST Framework back ends. I focus on clean
+              APIs, role-based access control, and performant, maintainable
+              code across the stack.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="/resume.pdf"
-                download
+                href="/resume-fullstack.pdf"
+                download="Bolgum_Hemanth_Goud_FullStack_Resume.pdf"
                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
               >
                 <Download size={20} />
@@ -67,6 +70,15 @@ export default function UserGeneralDetails() {
                 <Mail size={20} />
                 Contact Me
               </button>
+            </div>
+            <div>
+              <a
+                href="/resume-frontend.pdf"
+                download="Bolgum_Hemanth_Goud_Frontend_Resume.pdf"
+                className="text-sm text-blue-600 dark:text-blue-400 underline underline-offset-2 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+              >
+                Looking for a frontend-focused resume? Download it here
+              </a>
             </div>
             <div className="flex gap-4 pt-4">
               <a
@@ -97,8 +109,12 @@ export default function UserGeneralDetails() {
           <div className="relative animate-float">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-3xl opacity-20"></div>
             <div className="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8 backdrop-blur-sm">
-              <div className="aspect-square bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900 rounded-2xl flex items-center justify-center">
-                <div className="text-[200px]">👨‍💻</div>
+              <div className="aspect-square bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900 rounded-2xl flex items-center justify-center overflow-hidden">
+                <img
+                  src={MyPic}
+                  alt="Hemanth Goud"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

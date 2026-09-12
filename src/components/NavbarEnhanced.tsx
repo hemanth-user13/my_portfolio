@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, Download, ChevronDown } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import VisitorCounter from "./VisitorCounter";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isResumeMenuOpen, setIsResumeMenuOpen] = useState(false);
+  const resumeMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,13 +17,25 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        resumeMenuRef.current &&
+        !resumeMenuRef.current.contains(e.target as Node)
+      ) {
+        setIsResumeMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const menuItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
-    // { label: "Profiles", href: "#profiles" },
-    { label: "Blog", href: "#blog" },
+    { label: "Achievements", href: "#achievements" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -74,14 +88,36 @@ export default function Navbar() {
               </a>
             ))}
             <ThemeToggle />
-            <a
-              href="/resume.pdf"
-              download
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all"
-            >
-              <Download size={16} />
-              Resume
-            </a>
+            <div className="relative" ref={resumeMenuRef}>
+              <button
+                onClick={() => setIsResumeMenuOpen((prev) => !prev)}
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all"
+              >
+                <Download size={16} />
+                Resume
+                <ChevronDown size={14} />
+              </button>
+              {isResumeMenuOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden">
+                  <a
+                    href="/resume-fullstack.pdf"
+                    download="Bolgum_Hemanth_Goud_FullStack_Resume.pdf"
+                    onClick={() => setIsResumeMenuOpen(false)}
+                    className="block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    Full Stack Resume
+                  </a>
+                  <a
+                    href="/resume-frontend.pdf"
+                    download="Bolgum_Hemanth_Goud_Frontend_Resume.pdf"
+                    onClick={() => setIsResumeMenuOpen(false)}
+                    className="block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors border-t border-slate-100 dark:border-slate-700"
+                  >
+                    Frontend Resume
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
 
           <button
@@ -111,13 +147,23 @@ export default function Navbar() {
             ))}
             <div className="flex items-center justify-between pt-2">
               <ThemeToggle />
+            </div>
+            <div className="flex flex-col gap-2 pt-2">
               <a
-                href="/resume.pdf"
-                download
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all"
+                href="/resume-fullstack.pdf"
+                download="Bolgum_Hemanth_Goud_FullStack_Resume.pdf"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all"
               >
                 <Download size={16} />
-                Download Resume
+                Full Stack Resume
+              </a>
+              <a
+                href="/resume-frontend.pdf"
+                download="Bolgum_Hemanth_Goud_Frontend_Resume.pdf"
+                className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-700 transition-all"
+              >
+                <Download size={16} />
+                Frontend Resume
               </a>
             </div>
           </div>

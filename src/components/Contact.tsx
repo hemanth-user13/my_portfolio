@@ -78,7 +78,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+919652594864"
                   className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all group"
                 >
                   <div className="p-3 bg-green-100 rounded-lg group-hover:bg-green-200 transition-colors">
@@ -86,7 +86,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-slate-900">Phone</div>
-                    <div className="text-slate-600">+1 (234) 567-890</div>
+                    <div className="text-slate-600">+91 96525 94864</div>
                   </div>
                 </a>
 
@@ -96,7 +96,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-slate-900">Location</div>
-                    <div className="text-slate-600">Hyderabad, India</div>
+                    <div className="text-slate-600">India (Open to remote opportunities)</div>
                   </div>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function Contact() {
               </h3>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/hemanthgoud"
+                  href="https://github.com/hemanth-user13"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-110"
@@ -116,7 +116,7 @@ export default function Contact() {
                   <Github size={28} className="text-slate-700" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/hemanthgoud"
+                  href="https://www.linkedin.com/in/bolgum-hemanth-goud-722611247/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-110"

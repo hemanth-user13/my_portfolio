@@ -5,17 +5,20 @@ export default function About() {
     {
       icon: Code,
       title: "Full Stack Development",
-      description: "Expertise in both frontend and backend technologies",
+      description:
+        "React.js front ends paired with Python/Django REST Framework back ends",
     },
     {
       icon: Lightbulb,
-      title: "Problem Solving",
-      description: "Creative solutions to complex technical challenges",
+      title: "Role-Based Access & API Security",
+      description:
+        "Designing token/JWT authentication and RBAC for multi-tenant platforms",
     },
     {
       icon: Target,
-      title: "User Focused",
-      description: "Building applications with exceptional user experience",
+      title: "Performance-Focused",
+      description:
+        "Optimizing high-volume listing screens and backend queries for speed",
     },
   ];
 
@@ -41,24 +44,36 @@ export default function About() {
 
           <div className="space-y-6">
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              I'm a passionate Full Stack Developer specializing in{" "}
-              <span className="font-semibold text-blue-600">React</span> and{" "}
-              <span className="font-semibold text-blue-600">Django</span>. I
-              love solving complex problems and turning ideas into elegant
-              digital solutions.
+              I'm a Full Stack Developer with{" "}
+              <span className="font-semibold text-blue-600">
+                2.4 years of experience
+              </span>{" "}
+              building scalable web applications end-to-end — from{" "}
+              <span className="font-semibold text-blue-600">React.js</span>{" "}
+              front ends to{" "}
+              <span className="font-semibold text-blue-600">
+                Python / Django REST Framework
+              </span>{" "}
+              back ends. I currently work as a Software Developer at{" "}
+              <span className="font-semibold text-blue-600">
+                Omnics Technologies Pvt Ltd
+              </span>
+              , where I build role-based, multi-tenant compliance platforms
+              and internal productivity tools.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              With a strong foundation in both frontend and backend
-              technologies, I create scalable web applications that deliver
-              exceptional user experiences. My approach combines technical
-              expertise with creative problem-solving to build products that
-              make a real impact.
+              My day-to-day work spans designing REST APIs, implementing
+              token/JWT-based authentication and role-based access control
+              (RBAC), and building both the admin and customer-facing sides of
+              multi-tenant products — with a strong focus on performance,
+              security, and clean, maintainable code across the stack.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              I'm constantly learning and exploring new technologies to stay at
-              the forefront of web development. Whether it's crafting intuitive
-              interfaces or architecting robust backend systems, I'm driven by
-              the challenge of building something meaningful.
+              Beyond my day job, I've published an open-source npm package for
+              a React email editor, and I secured 2nd rank in a
+              university-level coding competition. I'm constantly learning
+              and exploring new technologies to stay at the forefront of web
+              development.
             </p>
 
             <div className="grid gap-4 pt-4">

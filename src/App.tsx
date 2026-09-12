@@ -3,10 +3,7 @@ import NavbarEnhanced from "./components/NavbarEnhanced";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Profiles from "./components/Profiles";
 import Certifications from "./components/Certifications";
-import Blog from "./components/Blog";
-import Testimonials from "./components/Testimonials";
 import ContactEnhanced from "./components/ContactEnhanced";
 import Footer from "./components/Footer";
 import ChatbotEnhanced from "./components/ChatbotEnhanced";
@@ -65,11 +62,12 @@ function App() {
       <Projects />
       {/* <Profiles /> */}
       <Certifications />
-      <Blog />
-      <Testimonials />
+      {/* Blog and Testimonials are hidden until there is real content to show */}
+      {/* <Blog /> */}
+      {/* <Testimonials /> */}
       <ContactEnhanced />
       <Footer />
-      <ChatbotEnhanced />
+      {/* <ChatbotEnhanced /> */}
       <EasterEgg />
     </div>
   );

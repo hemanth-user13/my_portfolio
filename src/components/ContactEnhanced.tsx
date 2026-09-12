@@ -83,7 +83,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+919652594864"
                   className="flex items-center gap-4 p-4 bg-white dark:bg-slate-700 rounded-xl shadow-md hover:shadow-lg transition-all group"
                 >
                   <div className="p-3 bg-green-100 dark:bg-green-900 rounded-lg group-hover:bg-green-200 dark:group-hover:bg-green-800 transition-colors">
@@ -97,7 +97,7 @@ export default function Contact() {
                       Phone
                     </div>
                     <div className="text-slate-600 dark:text-slate-300">
-                      +1 (234) 567-890
+                      +91 96525 94864
                     </div>
                   </div>
                 </a>
@@ -114,7 +114,7 @@ export default function Contact() {
                       Location
                     </div>
                     <div className="text-slate-600 dark:text-slate-300">
-                      Hyderabad, India
+                      India (Open to remote opportunities)
                     </div>
                   </div>
                 </div>

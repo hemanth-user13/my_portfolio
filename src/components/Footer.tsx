@@ -28,7 +28,7 @@ export default function Footer() {
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
-    { label: "Profiles", href: "#profiles" },
+    { label: "Achievements", href: "#achievements" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -72,7 +72,7 @@ export default function Footer() {
                 <Code2 size={20} />
               </a>
               <a
-                href="bhemanthgoud7878@gmail.com"
+                href="mailto:bhemanthgoud7878@gmail.com"
                 className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
               >
                 <Mail size={20} />
@@ -102,9 +102,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Get In Touch</h3>
             <div className="space-y-2 text-slate-400">
-              <p>Hyderabad, India</p>
+              <p>India (Open to remote opportunities)</p>
               <p>bhemanthgoud7878@gmail.com</p>
-              <p>+1 (234) 567-890</p>
+              <p>+91 96525 94864</p>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function Footer() {
             Built with React & Tailwind CSS
           </p>
           <p className="text-slate-400 text-sm text-center">
-            2025 Hemanth Goud. All rights reserved.
+            © {new Date().getFullYear()} Hemanth Goud. All rights reserved.
           </p>
         </div>
       </div>
