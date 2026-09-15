@@ -74,17 +74,17 @@ html {
 }
 
 /* ---------- Custom scrollbar ---------- */
-/* Minimal, low-contrast, brand-tinted — designed to sit quietly on top of
-   every section background (white / slate-50 / slate-800 / slate-900)
-   instead of drawing a hard-edged track box on top of them. */
+/* Neutral by default so it never fights with page content, with a brand
+   accent that only appears on hover/drag — thin, simple, and consistent
+   across every section background (white / slate-50 / slate-800 / slate-900). */
 :root {
-  --scrollbar-thumb: rgba(37, 99, 235, 0.28);
-  --scrollbar-thumb-hover: rgba(37, 99, 235, 0.5);
+  --scrollbar-thumb: #cbd5e1; /* slate-300 */
+  --scrollbar-thumb-hover: #2563eb; /* blue-600 */
 }
 
 html.dark {
-  --scrollbar-thumb: rgba(56, 189, 248, 0.3);
-  --scrollbar-thumb-hover: rgba(56, 189, 248, 0.55);
+  --scrollbar-thumb: #475569; /* slate-600 */
+  --scrollbar-thumb-hover: #38bdf8; /* sky-400 */
 }
 
 /* Firefox */
@@ -95,8 +95,8 @@ html {
 
 /* WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -106,12 +106,11 @@ html {
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
   border-radius: 999px;
-  border: 3px solid transparent;
-  background-clip: content-box;
   transition: background-color 0.2s ease;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
   background-color: var(--scrollbar-thumb-hover);
 }
 
@@ -120,18 +119,32 @@ html {
 }
 
 /* ---------- Cursor ---------- */
-/* Keep the plain system arrow everywhere, including over links, buttons
-   and other clickable elements — no hand/pointer icon, no custom shape. */
+/* A branded arrow cursor (same blue-600 → cyan-500 gradient as the rest of
+   the site) for the default pointer, and the familiar system hand/pointer
+   cursor on links, buttons and anything else clickable — kept deliberately
+   simple so visitors instantly recognize what's interactive. SVG first for
+   crisp rendering, PNG as a fallback for browsers without SVG-cursor
+   support; hotspot (3 2) lines up with the tip of the arrow in both files. */
 html,
 body {
-  cursor: default;
+  cursor: url('/cursor-arrow.svg') 3 2, url('/cursor-arrow.png') 3 2, auto;
 }
 
 a,
 button,
 [role='button'],
-label,
+input[type='submit'],
+input[type='button'],
+input[type='checkbox'],
+input[type='radio'],
+label[for],
 select,
 summary {
-  cursor: default;
+  cursor: pointer;
+}
+
+button:disabled,
+[role='button'][aria-disabled='true'],
+input:disabled {
+  cursor: not-allowed;
 }
