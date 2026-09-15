@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { Download, Mail, Github, Linkedin } from "lucide-react";
+import { Download, Eye, Mail, Github, Linkedin } from "lucide-react";
 import MyPic from "../media/hemanth_pic.png";
+import { useResumeModal } from "../contexts/ResumeModalContext";
 
 export default function UserGeneralDetails() {
+  const { openResume } = useResumeModal();
   const roles = [
     "Full Stack Developer 🚀",
     "React.js Developer 💻",
@@ -55,13 +57,27 @@ export default function UserGeneralDetails() {
               code across the stack.
             </p>
             <div className="flex flex-wrap gap-4">
+              <button
+                onClick={() =>
+                  openResume({
+                    fileUrl: "/resume-fullstack.pdf",
+                    fileName: "Bolgum_Hemanth_Goud_FullStack_Resume.pdf",
+                    title: "Full Stack Resume",
+                  })
+                }
+                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+              >
+                <Eye size={20} />
+                Preview Resume
+              </button>
               <a
                 href="/resume-fullstack.pdf"
                 download="Bolgum_Hemanth_Goud_FullStack_Resume.pdf"
-                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+                aria-label="Download Full Stack resume"
+                title="Download Full Stack resume"
+                className="flex items-center gap-2 px-4 py-3 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-white rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 transition-all transform hover:-translate-y-1"
               >
                 <Download size={20} />
-                Download Resume
               </a>
               <button
                 onClick={scrollToContact}
@@ -72,13 +88,18 @@ export default function UserGeneralDetails() {
               </button>
             </div>
             <div>
-              <a
-                href="/resume-frontend.pdf"
-                download="Bolgum_Hemanth_Goud_Frontend_Resume.pdf"
+              <button
+                onClick={() =>
+                  openResume({
+                    fileUrl: "/resume-frontend.pdf",
+                    fileName: "Bolgum_Hemanth_Goud_Frontend_Resume.pdf",
+                    title: "Frontend Resume",
+                  })
+                }
                 className="text-sm text-blue-600 dark:text-blue-400 underline underline-offset-2 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
               >
-                Looking for a frontend-focused resume? Download it here
-              </a>
+                Looking for a frontend-focused resume? Preview it here
+              </button>
             </div>
             <div className="flex gap-4 pt-4">
               <a

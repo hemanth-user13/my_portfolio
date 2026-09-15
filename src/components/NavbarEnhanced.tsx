@@ -1,9 +1,26 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Download, ChevronDown } from "lucide-react";
+import { Menu, X, Download, Eye, ChevronDown } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import VisitorCounter from "./VisitorCounter";
+import { useResumeModal } from "../contexts/ResumeModalContext";
+
+const RESUMES = [
+  {
+    key: "fullstack",
+    label: "Full Stack Resume",
+    fileUrl: "/resume-fullstack.pdf",
+    fileName: "Bolgum_Hemanth_Goud_FullStack_Resume.pdf",
+  },
+  {
+    key: "frontend",
+    label: "Frontend Resume",
+    fileUrl: "/resume-frontend.pdf",
+    fileName: "Bolgum_Hemanth_Goud_Frontend_Resume.pdf",
+  },
+] as const;
 
 export default function Navbar() {
+  const { openResume } = useResumeModal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResumeMenuOpen, setIsResumeMenuOpen] = useState(false);
@@ -99,23 +116,46 @@ export default function Navbar() {
                 <ChevronDown size={14} />
               </button>
               {isResumeMenuOpen && (
-                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden">
-                  <a
-                    href="/resume-fullstack.pdf"
-                    download="Bolgum_Hemanth_Goud_FullStack_Resume.pdf"
-                    onClick={() => setIsResumeMenuOpen(false)}
-                    className="block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors"
-                  >
-                    Full Stack Resume
-                  </a>
-                  <a
-                    href="/resume-frontend.pdf"
-                    download="Bolgum_Hemanth_Goud_Frontend_Resume.pdf"
-                    onClick={() => setIsResumeMenuOpen(false)}
-                    className="block px-4 py-3 text-sm text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors border-t border-slate-100 dark:border-slate-700"
-                  >
-                    Frontend Resume
-                  </a>
+                <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden">
+                  {RESUMES.map((resume, i) => (
+                    <div
+                      key={resume.key}
+                      className={`flex items-center justify-between gap-2 px-4 py-3 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors ${
+                        i > 0 ? "border-t border-slate-100 dark:border-slate-700" : ""
+                      }`}
+                    >
+                      <span className="text-sm text-slate-700 dark:text-slate-200">
+                        {resume.label}
+                      </span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        <button
+                          onClick={() => {
+                            openResume({
+                              fileUrl: resume.fileUrl,
+                              fileName: resume.fileName,
+                              title: resume.label,
+                            });
+                            setIsResumeMenuOpen(false);
+                          }}
+                          aria-label={`Preview ${resume.label}`}
+                          title="Preview"
+                          className="p-1.5 rounded-md text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-slate-600 transition-colors"
+                        >
+                          <Eye size={16} />
+                        </button>
+                        <a
+                          href={resume.fileUrl}
+                          download={resume.fileName}
+                          onClick={() => setIsResumeMenuOpen(false)}
+                          aria-label={`Download ${resume.label}`}
+                          title="Download"
+                          className="p-1.5 rounded-md text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-slate-600 transition-colors"
+                        >
+                          <Download size={16} />
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
@@ -150,22 +190,36 @@ export default function Navbar() {
               <ThemeToggle />
             </div>
             <div className="flex flex-col gap-2 pt-2">
-              <a
-                href="/resume-fullstack.pdf"
-                download="Bolgum_Hemanth_Goud_FullStack_Resume.pdf"
-                className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all"
-              >
-                <Download size={16} />
-                Full Stack Resume
-              </a>
-              <a
-                href="/resume-frontend.pdf"
-                download="Bolgum_Hemanth_Goud_Frontend_Resume.pdf"
-                className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-700 transition-all"
-              >
-                <Download size={16} />
-                Frontend Resume
-              </a>
+              {RESUMES.map((resume, i) => (
+                <div key={resume.key} className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      openResume({
+                        fileUrl: resume.fileUrl,
+                        fileName: resume.fileName,
+                        title: resume.label,
+                      });
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-all ${
+                      i === 0
+                        ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:shadow-lg"
+                        : "border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700"
+                    }`}
+                  >
+                    <Eye size={16} />
+                    {resume.label}
+                  </button>
+                  <a
+                    href={resume.fileUrl}
+                    download={resume.fileName}
+                    aria-label={`Download ${resume.label}`}
+                    className="p-2 rounded-lg border-2 border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-blue-400 dark:hover:border-blue-400 transition-colors"
+                  >
+                    <Download size={16} />
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </div>
